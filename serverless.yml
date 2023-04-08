@@ -1,10 +1,10 @@
-service: denis-kravchenko-react-service-1
+service: denis-kravchenko-react-service
 
 frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: nodejs14.x
+  runtime: nodejs18.x
   region: us-east-1
   profile: denis-kravchenko
 
@@ -18,7 +18,7 @@ plugins:
 
 custom:
   client:
-    bucketName: denis-kravchenko-react-shop-by-script-3
+    bucketName: denis-kravchenko-react-shop-by-script
     distributionFolder: dist
     indexDocument: /index.html
   s3BucketName: ${self:custom.client.bucketName}
@@ -116,7 +116,7 @@ resources:
             DefaultTTL: 0
           ## The certificate to use when viewers use HTTPS to request objects.
           ViewerCertificate:
-            CloudFrontDefaultCertificate: 'true'
+            CloudFrontDefaultCertificate: true
           ## Uncomment the following section in case you want to enable logging for CloudFront requests
           # Logging:
           #   IncludeCookies: 'false'
