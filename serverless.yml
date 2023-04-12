@@ -4,7 +4,7 @@ frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: nodejs18.x
+  runtime: nodejs16.x
   region: us-east-1
   profile: denis-kravchenko
 
@@ -96,8 +96,8 @@ resources:
               ResponseCode: 200
               ResponsePagePath: /index.html
           DefaultCacheBehavior:
-            AllowedMethods: [ 'GET', 'HEAD', 'OPTIONS' ]
-            CachedMethods: [ 'GET', 'HEAD', 'OPTIONS' ]
+            AllowedMethods: ["HEAD", "DELETE", "POST", "GET", "OPTIONS", "PUT", "PATCH"]
+            CachedMethods: ["HEAD", "GET", "OPTIONS"]
             ForwardedValues:
               Headers:
                 - Access-Control-Request-Headers
