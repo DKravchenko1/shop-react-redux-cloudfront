@@ -71,7 +71,7 @@ Combination of `cloudfront:setup` and `cloudfront:build:deploy` commands with or
 Remove an entire stack configured in `serverless.yml` via CloudFormation.
 
 ### link to CloudFront
-https://d23msvtec7zane.cloudfront.net/
+https://d23msvtec7zane.cloudfront.net
 
 ### link to s3
 http://denis-kravchenko-react-shop-by-script.s3-website-us-east-1.amazonaws.com
