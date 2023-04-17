@@ -105,7 +105,7 @@ resources:
                 - Origin
                 - Authorization
               ## Defining if and how the QueryString and Cookies are forwarded to the origin which in this case is S3
-              QueryString: false
+              QueryString: true
               Cookies:
                 Forward: none
             ## The origin id defined above
