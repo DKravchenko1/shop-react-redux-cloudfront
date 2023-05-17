@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useLayoutEffect } from "react";
 import MainLayout from "~/components/MainLayout/MainLayout";
 import PageProductForm from "~/components/pages/PageProductForm/PageProductForm";
 import PageOrders from "~/components/pages/PageOrders/PageOrders";
@@ -9,6 +10,19 @@ import PageProducts from "~/components/pages/PageProducts/PageProducts";
 import { Typography } from "@mui/material";
 
 function App() {
+  console.log(import.meta.env);
+  useLayoutEffect(() => {
+    localStorage.setItem(
+      "authorization_token",
+      window.btoa(
+        unescape(
+          encodeURIComponent(
+            `${import.meta.env.VITE_USER_NAME}:${import.meta.env.VITE_USER_PASSWORD}`
+          )
+        )
+      )
+    );
+  }, []);
   return (
     <MainLayout>
       <Routes>
