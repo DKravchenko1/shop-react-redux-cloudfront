@@ -8,7 +8,11 @@ export function useAvailableProducts() {
   return useQuery<AvailableProduct[], AxiosError>(
     "available-products",
     async () => {
-      const res = await axios.get<AvailableProduct[]>(`${API_PATHS.product}`);
+      const res = await axios.get<AvailableProduct[]>(`${API_PATHS.product}`, {
+        headers: {
+          Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
+        },
+      });
       return res.data;
     }
   );
@@ -45,6 +49,7 @@ export function useRemoveProductCache() {
 }
 
 export function useUpsertAvailableProduct() {
+  console.log("make request");
   return useMutation((values: AvailableProduct) =>
     axios.post<AvailableProduct>(`${API_PATHS.product}`, values, {
       headers: {
