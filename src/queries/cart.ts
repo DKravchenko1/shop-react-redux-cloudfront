@@ -11,6 +11,7 @@ export function useCart() {
         Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
       },
     });
+    console.log(res);
     return res.data;
   });
 }
