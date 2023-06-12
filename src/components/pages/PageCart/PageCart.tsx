@@ -100,7 +100,7 @@ export default function PageCart() {
       </Stepper>
       {isCartEmpty && <CartIsEmpty />}
       {!isCartEmpty && activeStep === CartStep.ReviewCart && (
-        <ReviewCart items={data} />
+        <ReviewCart items={data.items} />
       )}
       {activeStep === CartStep.Address && (
         <AddressForm
